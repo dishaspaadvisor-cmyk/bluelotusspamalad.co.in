@@ -37,7 +37,7 @@ export default function Footer() {
           <div>
             <Link
               href="/"
-              className="inline-flex items-center gap-4"
+              className="inline-flex text-white items-center gap-4"
               aria-label="Blue Lotus Spa Malad Home"
             >
               <div className="flex h-[64px] w-[64px] items-center justify-center rounded-full border border-[rgba(227,204,160,0.45)] bg-[var(--ivory)] shadow-[0_18px_44px_rgba(0,0,0,0.2)]">
