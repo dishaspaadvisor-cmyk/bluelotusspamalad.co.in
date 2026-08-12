@@ -158,20 +158,62 @@ export const siteData = {
   ],
 
   serviceCategories: [
-    "Full Body Massage",
-    "Thai Massage",
-    "Deep Tissue Massage",
-    "Swedish Massage",
-    "Aromatherapy Massage",
-    "Ayurvedic Massage",
-    "Oil Massage",
-    "Foot Massage",
-    "Head & Shoulder Massage",
-    "Four Hand Massage",
-    "Lomi Lomi Massage",
-    "Jacuzzi Milk Bath",
-    "Jacuzzi Honey Bath",
-    "Couples Spa Experience",
+    {
+      label: "Full Body Massage",
+      slug: "full-body-massage-in-malad-west",
+    },
+    {
+      label: "Thai Massage",
+      slug: "thai-massage-in-malad-west",
+    },
+    {
+      label: "Deep Tissue Massage",
+      slug: "deep-tissue-massage-in-malad-west",
+    },
+    {
+      label: "Swedish Massage",
+      slug: "swedish-massage-in-malad-west",
+    },
+    {
+      label: "Aromatherapy Massage",
+      slug: "aromatherapy-massage-in-malad-west",
+    },
+    {
+      label: "Oil Massage",
+      slug: "oil-massage-in-malad-west",
+    },
+    {
+      label: "Foot Massage",
+      slug: "foot-massage-in-malad-west",
+    },
+    {
+      label: "Four Hand Massage",
+      slug: "four-hand-massage-in-malad-west",
+    },
+    {
+      label: "Lomi Lomi Massage",
+      slug: "lomi-lomi-massage-in-malad-west",
+    },
+    {
+      label: "Jacuzzi Milk Bath",
+      slug: "jacuzzi-milk-bath-in-malad-west",
+    },
+    {
+      label: "Couples Spa Experience",
+      slug: "couples-massage-in-malad-west",
+    },
+    {
+      label: "Balinese Massage",
+      slug: "balinese-massage-in-malad-west",
+    },
+    {
+      label: "Chocolate Massage",
+      slug: "chocolate-massage-in-malad-west",
+    },
+    {
+      label: "Hot Stone Massage",
+      slug: "hot-stone-massage-in-malad-west",
+    },
   ],
 
   callToAction: {

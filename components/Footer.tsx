@@ -120,12 +120,12 @@ export default function Footer() {
             <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-1">
               {popularServices.map((service) => (
                 <Link
-                  key={service}
-                  href="/services"
+                  key={service.slug}
+                  href={`/services/${service.slug}`}
                   className="group flex items-center gap-2 py-1.5 text-[14px] text-[rgba(251,248,241,0.78)] transition hover:text-[var(--gold-light)]"
                 >
                   <span className="h-1.5 w-1.5 rounded-full bg-[var(--gold)] transition-transform group-hover:scale-125" />
-                  {service}
+                  {service.label}
                 </Link>
               ))}
             </div>

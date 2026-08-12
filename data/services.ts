@@ -20,7 +20,7 @@ export const services = [
 
   {
     id: 2,
-    title: "Body Massage",
+    title: "Body Massage in malad west",
     slug: "body-massage-in-malad-west",
     duration: "60 / 90 Minutes",
     image: "/service/body-massage.png",
@@ -37,7 +37,7 @@ export const services = [
 
   {
     id: 3,
-    title: "Swedish Massage",
+    title: "Swedish Massage in malad west",
     slug: "swedish-massage-in-malad-west",
     duration: "60 / 90 Minutes",
     image: "/service/swedish-massage.png",
@@ -54,7 +54,7 @@ export const services = [
 
   {
     id: 4,
-    title: "Deep Tissue Massage",
+    title: "Deep Tissue Massage in malad west",
     slug: "deep-tissue-massage-in-malad-west",
     duration: "60 / 90 Minutes",
     image: "/service/deep-tissue-massage.png",
@@ -71,7 +71,7 @@ export const services = [
 
   {
     id: 5,
-    title: "Thai Massage",
+    title: "Thai Massage in malad west",
     slug: "thai-massage-in-malad-west",
     duration: "60 / 90 Minutes",
     image: "/service/thai-massage.png",
@@ -88,7 +88,7 @@ export const services = [
 
   {
     id: 6,
-    title: "Balinese Massage",
+    title: "Balinese Massage in malad west",
     slug: "balinese-massage-in-malad-west",
     duration: "60 / 90 Minutes",
     image: "/service/balinese-massage.png",
@@ -105,7 +105,7 @@ export const services = [
 
   {
     id: 7,
-    title: "Aromatherapy Massage",
+    title: "Aromatherapy Massage in malad west",
     slug: "aromatherapy-massage-in-malad-west",
     duration: "60 / 90 Minutes",
     image: "/service/aromatherapy-massage.png",
@@ -122,7 +122,7 @@ export const services = [
 
   {
     id: 8,
-    title: "Oil Massage",
+    title: "Oil Massage in malad west",
     slug: "oil-massage-in-malad-west",
     duration: "60 / 90 Minutes",
     image: "/service/oil-massage.png",
@@ -139,7 +139,7 @@ export const services = [
 
   {
     id: 9,
-    title: "Four Hand Massage",
+    title: "Four Hand Massage in malad west",
     slug: "four-hand-massage-in-malad-west",
     duration: "60 / 90 Minutes",
     image: "/service/four-hand-massage.png",
@@ -156,7 +156,7 @@ export const services = [
 
   {
     id: 10,
-    title: "Couples Massage",
+    title: "Couples Massage in malad west",
     slug: "couples-massage-in-malad-west",
     duration: "60 / 90 Minutes",
     image: "/service/couples-massage.png",
@@ -173,7 +173,7 @@ export const services = [
 
   {
     id: 11,
-    title: "Lomi Lomi Massage",
+    title: "Lomi Lomi Massage in malad west",
     slug: "lomi-lomi-massage-in-malad-west",
     duration: "60 / 90 Minutes",
     image: "/service/lomi-lomi-massage.png",
@@ -190,7 +190,7 @@ export const services = [
 
   {
     id: 12,
-    title: "Chocolate Massage",
+    title: "Chocolate Massage in malad west",
     slug: "chocolate-massage-in-malad-west",
     duration: "60 / 90 Minutes",
     image: "/service/chocolate-massage.png",
@@ -207,7 +207,7 @@ export const services = [
 
   {
     id: 13,
-    title: "Jacuzzi Milk Bath",
+    title: "Jacuzzi Milk Bath in malad west",
     slug: "jacuzzi-milk-bath-in-malad-west",
     duration: "60 / 90 Minutes",
     image: "/service/jacuzzi-milk-bath.png",
@@ -224,7 +224,7 @@ export const services = [
 
   {
     id: 14,
-    title: "Hot Stone Massage",
+    title: "Hot Stone Massage in malad west",
     slug: "hot-stone-massage-in-malad-west",
     duration: "60 / 90 Minutes",
     image: "/service/hot-stone-massage.png",
@@ -241,7 +241,7 @@ export const services = [
 
   {
     id: 15,
-    title: "Foot Massage",
+    title: "Foot Massage in malad west",
     slug: "foot-massage-in-malad-west",
     duration: "30 / 60 Minutes",
     image: "/service/foot-massage.png",
