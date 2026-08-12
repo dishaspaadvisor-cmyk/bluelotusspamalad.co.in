@@ -17,7 +17,7 @@ export const siteData = {
     phone: "+91 9152363523",
     phoneRaw: "919152363523",
 
-    whatsapp: "919152363523",
+    whatsapp: "919167553675",
 
     email: "bluelotusspa.malad@gmail.com",
   },
@@ -91,10 +91,10 @@ export const siteData = {
 
   whatsapp: {
     defaultMessage:
-      "Hi Blue Lotus Spa Malad, I would like to know more about your spa services and availability.",
+      "Hi Blue Lotus Spa Malad from bluelotusspamalad.co.in, I would like to know more about your spa services and availability.",
 
     bookingMessage:
-      "Hi Blue Lotus Spa Malad, I would like to book a spa appointment. Please share the available timings and services.",
+      "Hi Blue Lotus Spa Malad form bluelotusspamalad.co.in, I would like to book a spa appointment. Please share the available timings and services.",
   },
 
   hero: {

@@ -31,21 +31,38 @@ export default function BlogsCard({
           IMAGE
       ========================================== */}
 
-      <Link href={`/blogs/${blog.slug}`} className="relative block aspect-[16/10] overflow-hidden bg-[var(--soft-cream)]" style={{ position: "relative" }} aria-label={`Read ${blog.title}`}>
+      <Link
+        href={`/blogs/${blog.slug}`}
+        className="relative block aspect-[4/3] overflow-hidden bg-[linear-gradient(135deg,var(--ivory),var(--soft-cream))] p-3"
+        style={{ position: "relative" }}
+        aria-label={`Read ${blog.title}`}
+      >
         <Image
           src={blog.image}
-          alt={blog.title}
+          alt=""
           fill
+          loading={blog.id <= 2 ? "eager" : "lazy"}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover transition-transform duration-700 group-hover:scale-105"
+          className="scale-110 object-cover opacity-22 blur-xl transition-transform duration-700 group-hover:scale-125"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-t from-[rgba(17,35,28,0.18)]/70 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(251,248,241,0.35),rgba(15,42,34,0.18))]" />
 
-        {/* Category Badge */}
+        <div className="relative h-full overflow-hidden rounded-[18px] border border-white/70 bg-white/72 shadow-[0_14px_34px_rgba(63,46,32,0.12)]">
+          <Image
+            src={blog.image}
+            alt={blog.title}
+            fill
+            loading={blog.id <= 2 ? "eager" : "lazy"}
+            sizes="(max-width: 768px) calc(100vw - 48px), (max-width: 1200px) 45vw, 30vw"
+            className="object-contain p-1 transition-transform duration-700 group-hover:scale-[1.025]"
+          />
+        </div>
+
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[rgba(17,35,28,0.18)] via-transparent to-transparent" />
 
         <div className="absolute left-4 top-4">
-          <span className="lux-badge text-[11px]">
+          <span className="lux-badge text-[11px] shadow-sm backdrop-blur-md">
             <FaSpa className="text-[10px]" />
             {blog.category}
           </span>
