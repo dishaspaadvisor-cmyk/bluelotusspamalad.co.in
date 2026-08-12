@@ -2,17 +2,16 @@
 
 import type { Metadata } from "next";
 
-import Image from "next/image";
 import Link from "next/link";
 
 import {
   FaArrowRight,
-  FaCamera,
   FaLocationDot,
   FaPhone,
   FaWhatsapp,
 } from "react-icons/fa6";
 
+import GalleryImageView from "@/components/GalleryImageView";
 import { galleryImages } from "@/data/gallery";
 import {
   gallerySEO,
@@ -159,61 +158,7 @@ export default function GalleryPage() {
 
       <section className="pb-16 lg:pb-20">
         <div className="site-container">
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
-            {galleryImages.map((item, index) => {
-              const isLarge =
-                index === 0 ||
-                index === 5 ||
-                index === 7 ||
-                index === 11;
-
-              return (
-                <article
-                  key={item.id}
-                  className={`group relative overflow-hidden rounded-[24px] border border-[var(--border-light)] bg-[var(--soft-cream)] shadow-[0_10px_30px_rgba(87,65,39,0.05)] ${
-                    isLarge
-                      ? "sm:col-span-2 lg:col-span-2 aspect-[16/9]"
-                      : "aspect-[4/5]"
-                  }`}
-                  style={{ position: "relative" }}
-                >
-                  <Image
-                    src={item.image}
-                    alt={item.alt}
-                    fill
-                    sizes={
-                      isLarge
-                        ? "(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 66vw"
-                        : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    }
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#3f2e20]/70 via-[#3f2e20]/10 to-transparent opacity-75 transition-opacity duration-300 group-hover:opacity-90" />
-
-                  {/* Category */}
-                  <div className="absolute left-4 top-4">
-                    <span className="inline-flex items-center gap-2 rounded-full border border-white/60 bg-white/90 px-3 py-1.5 text-[9px] font-bold uppercase tracking-[1.4px] text-[var(--gold-dark)] shadow-sm backdrop-blur-md">
-                      <FaCamera className="text-[9px]" />
-
-                      {item.category}
-                    </span>
-                  </div>
-
-                  {/* Content */}
-                  <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
-                    <p className="text-[9px] font-bold uppercase tracking-[2px] text-[#ead6b6]">
-                      Blue Lotus Spa Malad
-                    </p>
-
-                    <h2 className="mt-1 font-serif text-[22px] font-semibold leading-tight text-white sm:text-[24px]">
-                      {item.title}
-                    </h2>
-                  </div>
-                </article>
-              );
-            })}
-          </div>
+          <GalleryImageView images={galleryImages} />
         </div>
       </section>
 
