@@ -64,6 +64,7 @@ export default function Popup() {
                 alt="Blue Lotus Spa Malad first massage offer"
                 fill
                 sizes="(max-width: 640px) 100vw, 380px"
+                loading="eager"
                 className="object-cover"
               />
 
@@ -97,11 +98,11 @@ export default function Popup() {
 
                 <div className="mt-2 flex flex-wrap items-end gap-x-3 gap-y-1">
                   <span className="text-[16px] font-semibold text-[var(--muted-text)] line-through decoration-red-400 decoration-2">
-                    ₹4,999
+                    &#8377;4,999
                   </span>
 
                   <span className="font-serif text-[30px] font-bold leading-none text-[var(--forest)] sm:text-[34px]">
-                    ₹1999
+                    &#8377;1,999
                   </span>
                 </div>
 
