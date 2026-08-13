@@ -27,6 +27,21 @@ npm run lint
 npm run build
 ```
 
+## Node Server Deployment
+
+This project is configured for a Node.js server deployment with Next.js
+standalone output, not static export.
+
+```bash
+npm ci
+npm run build
+node .next/standalone/server.js
+```
+
+Deploy the generated `.next/standalone` folder. The `postbuild` step copies
+`public` and `.next/static` into that folder so video files and Next chunks are
+served by the standalone server.
+
 ## Project Notes
 
 - Keep business data, SEO data, routes, slugs, contact links, and asset paths stable unless a redirect/content plan is made.
