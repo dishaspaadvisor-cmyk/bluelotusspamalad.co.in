@@ -21,6 +21,8 @@ import {
   whatsappBookingUrl,
 } from "@/data/site";
 
+import { reportGoogleAdsConversion } from "@/lib/gtag";
+
 const navigation = siteData.navigation;
 
 export default function Header() {
@@ -51,6 +53,11 @@ export default function Header() {
 
   const closeMenu = () => {
     setIsOpen(false);
+  };
+
+  const handleConversionClick = (e: React.MouseEvent<HTMLAnchorElement>, url: string) => {
+    e.preventDefault();
+    reportGoogleAdsConversion(url);
   };
 
   return (
@@ -88,6 +95,7 @@ export default function Header() {
             <span className="h-4 w-px bg-[rgba(216,203,184,0.85)]" />
 
             <a
+              onClick={(e) => handleConversionClick(e, phoneUrl)}
               href={phoneUrl}
               className="flex items-center gap-2 text-[13px] font-semibold lux-espresso transition-colors duration-300 hover:lux-gold"
             >
@@ -157,14 +165,14 @@ export default function Header() {
           <div className="hidden items-center gap-2.5 lg:flex">
             {/* CALL */}
 
-            <a href={phoneUrl} aria-label="Call Blue Lotus Spa Malad" className="lux-btn-secondary" >
+            <a onClick={(e) => handleConversionClick(e, phoneUrl)} href={phoneUrl} aria-label="Call Blue Lotus Spa Malad" className="lux-btn-secondary" >
               <FaPhone className="text-[11px]" />
               <span>Call</span>
             </a>
 
             {/* WHATSAPP */}
 
-            <a href={whatsappBookingUrl} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Blue Lotus Spa Malad" className="lux-btn-whatsapp inline-flex min-h-[52px] items-center justify-center gap-2 px-6 text-[13px]">
+            <a onClick={(e) => handleConversionClick(e, whatsappBookingUrl)} href={whatsappBookingUrl} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Blue Lotus Spa Malad" className="lux-btn-whatsapp inline-flex min-h-[52px] items-center justify-center gap-2 px-6 text-[13px]">
               <FaWhatsapp className="text-[17px]" />
               <span>WhatsApp</span>
             </a>
@@ -177,13 +185,13 @@ export default function Header() {
           <div className="flex items-center gap-2 lg:hidden">
             {/* CALL */}
 
-            <a href={phoneUrl} className="flex h-[42px] w-[42px] items-center justify-center rounded-full border lux-border lux-cream-bg text-[var(--gold-dark)] transition-colors duration-300 hover:bg-[var(--cream)]" aria-label="Call Blue Lotus Spa Malad">
+            <a onClick={(e) => handleConversionClick(e, phoneUrl)} href={phoneUrl} className="flex h-[42px] w-[42px] items-center justify-center rounded-full border lux-border lux-cream-bg text-[var(--gold-dark)] transition-colors duration-300 hover:bg-[var(--cream)]" aria-label="Call Blue Lotus Spa Malad">
               <FaPhone className="text-[15px]" />
             </a>
 
             {/* WHATSAPP */}
 
-            <a href={whatsappBookingUrl} target="_blank" rel="noopener noreferrer" className="hidden h-[42px] w-[42px] items-center justify-center rounded-full min-[380px]:flex lux-btn-whatsapp" aria-label="WhatsApp Blue Lotus Spa Malad">
+            <a onClick={(e) => handleConversionClick(e, whatsappBookingUrl)} href={whatsappBookingUrl} target="_blank" rel="noopener noreferrer" className="hidden h-[42px] w-[42px] items-center justify-center rounded-full min-[380px]:flex lux-btn-whatsapp" aria-label="WhatsApp Blue Lotus Spa Malad">
               <FaWhatsapp className="text-[19px]" />
             </a>
 
@@ -294,12 +302,12 @@ export default function Header() {
             <p className="mb-5 text-[13px] leading-6 lux-muted">CTS No. 269, A-3, Unit 1, A Wing Solitaire II, New Link Rd, Opp. Infinity Mall, Malad West, Mumbai 400064</p>
 
             <div className="grid grid-cols-2 gap-2.5">
-              <a href={phoneUrl} className="flex h-[47px] items-center justify-center gap-2 rounded-xl lux-btn-secondary" aria-label="Call Blue Lotus Spa Malad">
+              <a onClick={(e) => handleConversionClick(e, phoneUrl)} href={phoneUrl} className="flex h-[47px] items-center justify-center gap-2 rounded-xl lux-btn-secondary" aria-label="Call Blue Lotus Spa Malad">
                 <FaPhone className="text-[12px]" />
                 Call
               </a>
 
-              <a href={whatsappBookingUrl} target="_blank" rel="noopener noreferrer" className="flex h-[47px] items-center justify-center gap-2 rounded-xl lux-btn-whatsapp" aria-label="WhatsApp Blue Lotus Spa Malad">
+              <a onClick={(e) => handleConversionClick(e, whatsappBookingUrl)} href={whatsappBookingUrl} target="_blank" rel="noopener noreferrer" className="flex h-[47px] items-center justify-center gap-2 rounded-xl lux-btn-whatsapp" aria-label="WhatsApp Blue Lotus Spa Malad">
                 <FaWhatsapp className="text-[12px]" />
                 WhatsApp
               </a>

@@ -18,8 +18,15 @@ import {
   whatsappBookingUrl,
 } from "@/data/site";
 
+import { reportGoogleAdsConversion } from "@/lib/gtag";
+
 export default function Popup() {
   const [isOpen, setIsOpen] = useState(false);
+
+  const handleConversionClick = (e: React.MouseEvent<HTMLAnchorElement>, url: string) => {
+    e.preventDefault();
+    reportGoogleAdsConversion(url);
+  };
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -122,6 +129,7 @@ export default function Popup() {
 
               <div className="mt-5 grid grid-cols-2 gap-2.5 sm:mt-7 sm:gap-3">
                 <a
+                  onClick={(e) => handleConversionClick(e, phoneUrl)}
                   href={phoneUrl}
                   aria-label="Call Blue Lotus Spa Malad"
                   className="flex min-h-[48px] items-center justify-center gap-2 rounded-xl border border-[var(--border)] bg-[var(--ivory)] px-3 text-[12px] font-bold text-[var(--gold-dark)] transition hover:bg-[var(--cream)] sm:min-h-[52px] sm:text-[13px]"
@@ -131,6 +139,7 @@ export default function Popup() {
                 </a>
 
                 <a
+                  onClick={(e) => handleConversionClick(e, whatsappBookingUrl)}
                   href={whatsappBookingUrl}
                   target="_blank"
                   rel="noopener noreferrer"

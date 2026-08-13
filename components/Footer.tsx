@@ -1,5 +1,7 @@
 // components/Footer.tsx
 
+"use client";
+
 import Link from "next/link";
 
 import {
@@ -21,9 +23,16 @@ import {
   whatsappBookingUrl,
 } from "@/data/site";
 
+import { reportGoogleAdsConversion } from "@/lib/gtag";
+
 export default function Footer() {
   const quickLinks = siteData.navigation;
   const popularServices = siteData.serviceCategories.slice(0, 8);
+
+  const handleConversionClick = (e: React.MouseEvent<HTMLAnchorElement>, url: string) => {
+    e.preventDefault();
+    reportGoogleAdsConversion(url);
+  };
 
   return (
     <footer className="relative overflow-hidden bg-[var(--forest-dark)] text-[var(--ivory)]">
@@ -204,6 +213,7 @@ export default function Footer() {
 
             <div className="grid grid-cols-2 gap-3 sm:flex">
               <a
+                onClick={(e) => handleConversionClick(e, phoneUrl)}
                 href={phoneUrl}
                 className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full border border-[rgba(227,204,160,0.38)] bg-[var(--ivory)] px-5 text-[12px] font-bold text-[var(--forest)] shadow-[0_12px_28px_rgba(0,0,0,0.18)] transition hover:-translate-y-0.5 hover:bg-white"
                 aria-label="Call Blue Lotus Spa Malad"
@@ -213,6 +223,7 @@ export default function Footer() {
               </a>
 
               <a
+                onClick={(e) => handleConversionClick(e, whatsappBookingUrl)}
                 href={whatsappBookingUrl}
                 target="_blank"
                 rel="noopener noreferrer"

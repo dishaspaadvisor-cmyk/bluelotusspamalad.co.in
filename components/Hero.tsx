@@ -15,6 +15,8 @@ import {
   whatsappBookingUrl,
 } from "@/data/site";
 
+import { reportGoogleAdsConversion } from "@/lib/gtag";
+
 const heroTitles = [
   "Best Spa in Malad",
   "Luxury Spa in Malad",
@@ -32,6 +34,11 @@ export default function Hero() {
   const [titleIndex, setTitleIndex] = useState(0);
   const [displayText, setDisplayText] = useState(heroTitles[0]);
   const [isDeleting, setIsDeleting] = useState(false);
+
+  const handleConversionClick = (e: React.MouseEvent<HTMLAnchorElement>, url: string) => {
+    e.preventDefault();
+    reportGoogleAdsConversion(url);
+  };
 
   useEffect(() => {
     const currentTitle = heroTitles[titleIndex];
@@ -131,12 +138,12 @@ export default function Hero() {
             {/* Buttons */}
 
             <div className="mt-8 flex items-center justify-center gap-3">
-              <a href={phoneUrl} aria-label="Call Blue Lotus Spa Malad" className="lux-btn-secondary min-h-[54px] px-7 text-[13px]">
+              <a onClick={(e) => handleConversionClick(e, phoneUrl)} href={phoneUrl} aria-label="Call Blue Lotus Spa Malad" className="lux-btn-secondary min-h-[54px] px-7 text-[13px]">
                 <FaPhone className="text-[13px]" />
                 <span>Call Now</span>
               </a>
 
-              <a href={whatsappBookingUrl} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Blue Lotus Spa Malad" className="lux-btn-whatsapp inline-flex min-h-[54px] items-center justify-center gap-2 px-7 text-[13px]">
+              <a onClick={(e) => handleConversionClick(e, whatsappBookingUrl)} href={whatsappBookingUrl} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Blue Lotus Spa Malad" className="lux-btn-whatsapp inline-flex min-h-[54px] items-center justify-center gap-2 px-7 text-[13px]">
                 <FaWhatsapp className="text-[18px]" />
                 <span>WhatsApp</span>
               </a>
@@ -205,12 +212,12 @@ export default function Hero() {
             {/* Buttons */}
 
             <div className="mx-auto mt-6 grid max-w-[360px] grid-cols-2 gap-3">
-              <a href={phoneUrl} aria-label="Call Blue Lotus Spa Malad" className="lux-btn-secondary min-h-[48px] px-4 text-[12px]">
+              <a onClick={(e) => handleConversionClick(e, phoneUrl)} href={phoneUrl} aria-label="Call Blue Lotus Spa Malad" className="lux-btn-secondary min-h-[48px] px-4 text-[12px]">
                 <FaPhone className="text-[12px]" />
                 Call Now
               </a>
 
-              <a href={whatsappBookingUrl} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Blue Lotus Spa Malad" className="lux-btn-whatsapp inline-flex min-h-[48px] items-center justify-center gap-2 px-4 text-[12px]">
+              <a onClick={(e) => handleConversionClick(e, whatsappBookingUrl)} href={whatsappBookingUrl} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Blue Lotus Spa Malad" className="lux-btn-whatsapp inline-flex min-h-[48px] items-center justify-center gap-2 px-4 text-[12px]">
                 <FaWhatsapp className="text-[17px]" />
                 WhatsApp
               </a>

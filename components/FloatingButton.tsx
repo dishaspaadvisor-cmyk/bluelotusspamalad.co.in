@@ -12,7 +12,14 @@ import {
   whatsappBookingUrl,
 } from "@/data/site";
 
+import { reportGoogleAdsConversion } from "@/lib/gtag";
+
 export default function FloatingButton() {
+  const handleConversionClick = (e: React.MouseEvent<HTMLAnchorElement>, url: string) => {
+    e.preventDefault();
+    reportGoogleAdsConversion(url);
+  };
+
   return (
     <>
       {/* =========================================
@@ -22,14 +29,26 @@ export default function FloatingButton() {
       <div className="fixed bottom-6 right-6 z-[60] hidden flex-col gap-3 md:flex">
         {/* WHATSAPP */}
 
-        <a href={whatsappBookingUrl} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Blue Lotus Spa Malad" className="lux-btn-whatsapp inline-flex min-h-[52px] items-center justify-center gap-2 px-6 text-[13px]">
+        <a 
+          onClick={(e) => handleConversionClick(e, whatsappBookingUrl)}
+          href={whatsappBookingUrl} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          aria-label="WhatsApp Blue Lotus Spa Malad" 
+          className="lux-btn-whatsapp inline-flex min-h-[52px] items-center justify-center gap-2 px-6 text-[13px]"
+        >
           <FaWhatsapp className="text-[19px]" />
           <span>WhatsApp</span>
         </a>
 
         {/* CALL */}
 
-        <a href={phoneUrl} aria-label="Call Blue Lotus Spa Malad" className="lux-btn-secondary">
+        <a 
+          onClick={(e) => handleConversionClick(e, phoneUrl)}
+          href={phoneUrl} 
+          aria-label="Call Blue Lotus Spa Malad" 
+          className="lux-btn-secondary"
+        >
           <FaPhone className="text-[13px]" />
           <span>Call Now</span>
         </a>
@@ -43,14 +62,26 @@ export default function FloatingButton() {
         <div className="mx-auto grid max-w-[520px] grid-cols-2 gap-2.5">
           {/* CALL */}
 
-          <a href={phoneUrl} aria-label="Call Blue Lotus Spa Malad" className="lux-btn-secondary flex items-center justify-center gap-2">
+          <a 
+            onClick={(e) => handleConversionClick(e, phoneUrl)}
+            href={phoneUrl} 
+            aria-label="Call Blue Lotus Spa Malad" 
+            className="lux-btn-secondary flex items-center justify-center gap-2"
+          >
             <FaPhone className="text-[12px]" />
             Call Now
           </a>
 
           {/* WHATSAPP */}
 
-          <a href={whatsappBookingUrl} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Blue Lotus Spa Malad" className="lux-btn-whatsapp flex min-h-[48px] items-center justify-center gap-2 px-4 text-[12px]">
+          <a 
+            onClick={(e) => handleConversionClick(e, whatsappBookingUrl)}
+            href={whatsappBookingUrl} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            aria-label="WhatsApp Blue Lotus Spa Malad" 
+            className="lux-btn-whatsapp flex min-h-[48px] items-center justify-center gap-2 px-4 text-[12px]"
+          >
             <FaWhatsapp className="text-[18px]" />
             WhatsApp
           </a>

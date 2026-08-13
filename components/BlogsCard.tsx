@@ -1,5 +1,7 @@
 // components/BlogsCard.tsx
 
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -18,6 +20,8 @@ import {
   whatsappBookingUrl,
 } from "@/data/site";
 
+import { reportGoogleAdsConversion } from "@/lib/gtag";
+
 interface BlogsCardProps {
   blog: Blog;
 }
@@ -25,6 +29,10 @@ interface BlogsCardProps {
 export default function BlogsCard({
   blog,
 }: BlogsCardProps) {
+  const handleConversionClick = (e: React.MouseEvent<HTMLAnchorElement>, url: string) => {
+    e.preventDefault();
+    reportGoogleAdsConversion(url);
+  };
   return (
     <article className="lux-card group">
       {/* =========================================
@@ -113,7 +121,7 @@ export default function BlogsCard({
         <div className="grid grid-cols-2 gap-2.5">
           {/* CALL */}
 
-          <a href={phoneUrl} aria-label={`Call Blue Lotus Spa Malad about ${blog.title}`} className="lux-btn-secondary inline-flex items-center justify-center gap-2">
+          <a onClick={(e) => handleConversionClick(e, phoneUrl)} href={phoneUrl} aria-label={`Call Blue Lotus Spa Malad about ${blog.title}`} className="lux-btn-secondary inline-flex items-center justify-center gap-2">
             <FaPhone className="text-[11px]" />
 
             Call Now
@@ -121,7 +129,7 @@ export default function BlogsCard({
 
           {/* WHATSAPP */}
 
-          <a href={whatsappBookingUrl} target="_blank" rel="noopener noreferrer" aria-label={`WhatsApp Blue Lotus Spa Malad about ${blog.title}`} className="lux-btn-whatsapp inline-flex min-h-[48px] items-center justify-center gap-2 px-4 text-[12px]">
+          <a onClick={(e) => handleConversionClick(e, whatsappBookingUrl)} href={whatsappBookingUrl} target="_blank" rel="noopener noreferrer" aria-label={`WhatsApp Blue Lotus Spa Malad about ${blog.title}`} className="lux-btn-whatsapp inline-flex min-h-[48px] items-center justify-center gap-2 px-4 text-[12px]">
             <FaWhatsapp className="text-[17px]" />
 
             WhatsApp

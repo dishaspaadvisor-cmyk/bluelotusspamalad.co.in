@@ -1,5 +1,7 @@
 // components/ServiceCard.tsx
 
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -17,6 +19,8 @@ import {
   whatsappBookingUrl,
 } from "@/data/site";
 
+import { reportGoogleAdsConversion } from "@/lib/gtag";
+
 interface ServiceCardProps {
   service: Service;
 }
@@ -24,6 +28,10 @@ interface ServiceCardProps {
 export default function ServiceCard({
   service,
 }: ServiceCardProps) {
+  const handleConversionClick = (e: React.MouseEvent<HTMLAnchorElement>, url: string) => {
+    e.preventDefault();
+    reportGoogleAdsConversion(url);
+  };
   return (
     <article className="lux-card group">
       {/* =========================================
@@ -70,12 +78,12 @@ export default function ServiceCard({
         <div className="my-4 h-px w-full lux-border-light" />
 
         <div className="grid grid-cols-2 gap-2.5">
-          <a href={phoneUrl} aria-label={`Call Blue Lotus Spa Malad for ${service.title}`} className="lux-btn-secondary inline-flex items-center justify-center gap-2">
+          <a onClick={(e) => handleConversionClick(e, phoneUrl)} href={phoneUrl} aria-label={`Call Blue Lotus Spa Malad for ${service.title}`} className="lux-btn-secondary inline-flex items-center justify-center gap-2">
             <FaPhone className="text-[12px]" />
             Call
           </a>
 
-          <a href={whatsappBookingUrl} target="_blank" rel="noopener noreferrer" aria-label={`WhatsApp Blue Lotus Spa Malad about ${service.title}`} className="lux-btn-whatsapp inline-flex min-h-[48px] items-center justify-center gap-2 px-4 text-[12px]">
+          <a onClick={(e) => handleConversionClick(e, whatsappBookingUrl)} href={whatsappBookingUrl} target="_blank" rel="noopener noreferrer" aria-label={`WhatsApp Blue Lotus Spa Malad about ${service.title}`} className="lux-btn-whatsapp inline-flex min-h-[48px] items-center justify-center gap-2 px-4 text-[12px]">
             <FaWhatsapp className="text-[16px]" />
             WhatsApp
           </a>

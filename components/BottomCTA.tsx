@@ -1,5 +1,7 @@
 // components/BottomCTA.tsx
 
+"use client";
+
 import {
   FaPhone,
   FaWhatsapp,
@@ -13,7 +15,14 @@ import {
   siteData,
 } from "@/data/site";
 
+import { reportGoogleAdsConversion } from "@/lib/gtag";
+
 export default function BottomCTA() {
+  const handleConversionClick = (e: React.MouseEvent<HTMLAnchorElement>, url: string) => {
+    e.preventDefault();
+    reportGoogleAdsConversion(url);
+  };
+
   return (
     <section className="relative overflow-hidden lux-ivory-bg">
       <div className="pointer-events-none absolute inset-0">
@@ -58,6 +67,7 @@ export default function BottomCTA() {
 
               <div className="flex flex-col gap-3">
                 <a
+                  onClick={(e) => handleConversionClick(e, phoneUrl)}
                   href={phoneUrl}
                   className="lux-btn-secondary justify-between"
                   aria-label="Call Blue Lotus Spa Malad"
@@ -82,6 +92,7 @@ export default function BottomCTA() {
                 </a>
 
                 <a
+                  onClick={(e) => handleConversionClick(e, whatsappBookingUrl)}
                   href={whatsappBookingUrl}
                   target="_blank"
                   rel="noopener noreferrer"
